@@ -1,15 +1,15 @@
-%global svnver 20160105svn
+%global svnver 20160120svn124
 Name:           ccdciel
-Version:        0.2.0
-Release:        10.%{svnver}%{?dist}
+Version:        0.3.0
+Release:        1.%{svnver}%{?dist}
 Summary:        CCD capture software
 
 License:        GPLv3+
 URL:            http://www.ap-i.net/ccdciel/
 # The source code is not available upstream as a package so we pulled it 
 # from upstream's vcs. Use the following commands to generate the tarball:
-# svn export -r 115 svn://svn.code.sf.net/p/ccdciel/code/trunk ccdciel-0.2.0
-# tar -cJvf ccdciel-0.2.0-20160105svn.tar.xz ccdciel-0.2.0
+# svn export -r 124 svn://svn.code.sf.net/p/ccdciel/code/trunk ccdciel-0.3.0
+# tar -cJvf ccdciel-0.3.0-20160120svn124.tar.xz ccdciel-0.3.0
 Source0:        %{name}-%{version}-%{svnver}.tar.xz
 
 # Patch to avoid stripping debuginfo from executable
@@ -46,9 +46,6 @@ Indistarter can be used to control INDI server drivers
 #Remove spurious executable bit
 chmod -x ./component/synapse/source/lib/*.pas
 
-# Fix wrong FSF address in source headers
-# asked upstream to fix this
-grep -rl '59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.' * | xargs -i@ sed -i 's/59 Temple Place - Suite 330, Boston, MA  02111-1307, USA./51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA./g' @
 
 %build
 # Configure script requires non standard parameters
@@ -92,6 +89,10 @@ fi
 
 
 %changelog
+* Fri Jan 22 2016 Mattia Verga <mattia.verga@tiscali.it> - 0.3.0-1.20160120svn124
+- Update to 0.3.0
+- FSF address is now fixed upstream
+
 * Sat Jan 16 2016 Mattia Verga <mattia.verga@tiscali.it> - 0.2.0-10.20160105svn
 - Moved tests into %%check
 - Added architecture to libpasastro dependency
