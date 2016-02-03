@@ -1,7 +1,7 @@
 %global svnver 20160120svn124
 Name:           ccdciel
 Version:        0.3.0
-Release:        1.%{svnver}%{?dist}
+Release:        2.%{svnver}%{?dist}
 Summary:        CCD capture software
 
 License:        GPLv3+
@@ -89,6 +89,9 @@ fi
 
 
 %changelog
+* Wed Feb 03 2016 Fedora Release Engineering <releng@fedoraproject.org> - 0.3.0-2.20160120svn124
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_24_Mass_Rebuild
+
 * Fri Jan 22 2016 Mattia Verga <mattia.verga@tiscali.it> - 0.3.0-1.20160120svn124
 - Update to 0.3.0
 - FSF address is now fixed upstream
