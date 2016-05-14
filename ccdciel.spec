@@ -1,29 +1,28 @@
-%global svnver 20160120svn124
+%global svnversion 131
+
 Name:           ccdciel
-Version:        0.3.0
-Release:        2.%{svnver}%{?dist}
+Version:        0.4.0
+Release:        1.%{svnversion}svn%{?dist}
 Summary:        CCD capture software
 
 License:        GPLv3+
 URL:            http://www.ap-i.net/ccdciel/
 # The source code is not available upstream as a package so we pulled it 
 # from upstream's vcs. Use the following commands to generate the tarball:
-# svn export -r 124 svn://svn.code.sf.net/p/ccdciel/code/trunk ccdciel-0.3.0
-# tar -cJvf ccdciel-0.3.0-20160120svn124.tar.xz ccdciel-0.3.0
-Source0:        %{name}-%{version}-%{svnver}.tar.xz
+# svn export -r 131 svn://svn.code.sf.net/p/ccdciel/code/trunk ccdciel-0.4.0
+# tar -cJvf ccdciel-0.4.0-131.tar.xz ccdciel-0.4.0
+Source0:        %{name}-%{version}-%{svnversion}.tar.xz
 
 # Patch to avoid stripping debuginfo from executable
 # Since this is Fedora specific we don't ask upstream to include
 Patch0:         ccdciel_fix_stripping.patch
 
-# fpc isn't available on aarch64 and s390
-# lazarus isn't available on ppc and s390
-# so ccdciel could not build
-# https://bugzilla.redhat.com/show_bug.cgi?id=###
-# (I will open a bug to track this when imported in scm)
-ExcludeArch:    aarch64 %{power64} s390 s390x
+ExclusiveArch:  %{fpc_arches}
 
-BuildRequires:  fpc, lazarus desktop-file-utils, libappstream-glib
+BuildRequires:  desktop-file-utils
+BuildRequires:  fpc
+BuildRequires:  lazarus
+BuildRequires:  libappstream-glib
 
 # CCDciel requires libpasastro to function properly
 # but rpm doesn't find this autorequire
@@ -89,6 +88,10 @@ fi
 
 
 %changelog
+* Sat May 14 2016 Mattia Verga <mattia.verga@tiscali.it> - 0.4.0-1.131svn
+- Update to 0.4.0
+- Use new fpc_arches macro as ExclusiveArch
+
 * Wed Feb 03 2016 Fedora Release Engineering <releng@fedoraproject.org> - 0.3.0-2.20160120svn124
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_24_Mass_Rebuild
 
