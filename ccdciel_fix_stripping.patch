@@ -1,6 +1,6 @@
 diff -U 3 -H -d -r -N -- a/install.sh b/install.sh
---- a/install.sh	2015-12-18 11:30:24.162798000 +0100
-+++ b/install.sh	2015-12-20 09:19:41.650645814 +0100
+--- a/install.sh
++++ b/install.sh
 @@ -25,7 +25,7 @@
  install -m 755 -d $destdir/share/icons/hicolor/scalable
  install -m 755 -d $destdir/share/icons/hicolor/scalable/apps
