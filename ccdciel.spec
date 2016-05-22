@@ -1,7 +1,7 @@
-%global svnversion 131
+%global svnversion 143
 
 Name:           ccdciel
-Version:        0.4.0
+Version:        0.5.0
 Release:        1.%{svnversion}svn%{?dist}
 Summary:        CCD capture software
 
@@ -9,8 +9,8 @@ License:        GPLv3+
 URL:            http://www.ap-i.net/ccdciel/
 # The source code is not available upstream as a package so we pulled it 
 # from upstream's vcs. Use the following commands to generate the tarball:
-# svn export -r 131 svn://svn.code.sf.net/p/ccdciel/code/trunk ccdciel-0.4.0
-# tar -cJvf ccdciel-0.4.0-131.tar.xz ccdciel-0.4.0
+# svn export -r 143 svn://svn.code.sf.net/p/ccdciel/code/trunk ccdciel-0.5.0
+# tar -cJvf ccdciel-0.5.0-143.tar.xz ccdciel-0.5.0
 Source0:        %{name}-%{version}-%{svnversion}.tar.xz
 
 # Patch to avoid stripping debuginfo from executable
@@ -88,6 +88,9 @@ fi
 
 
 %changelog
+* Sun May 22 2016 Mattia Verga <mattia.verga@tiscali.it> - 0.5.0-1.143svn
+- Update to 0.5.0
+
 * Sat May 14 2016 Mattia Verga <mattia.verga@tiscali.it> - 0.4.0-1.131svn
 - Update to 0.4.0
 - Use new fpc_arches macro as ExclusiveArch
