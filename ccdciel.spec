@@ -1,7 +1,7 @@
-%global svnversion 228
+%global svnversion 282
 
 Name:           ccdciel
-Version:        0.7.2
+Version:        0.8.3
 Release:        1.%{svnversion}svn%{?dist}
 Summary:        CCD capture software
 
@@ -9,8 +9,8 @@ License:        GPLv3+
 URL:            http://www.ap-i.net/ccdciel/
 # The source code is not available upstream as a package so we pulled it 
 # from upstream's vcs. Use the following commands to generate the tarball:
-# svn export -r 228 svn://svn.code.sf.net/p/ccdciel/code/trunk ccdciel-0.7.2
-# tar -cJvf ccdciel-0.7.2-228.tar.xz ccdciel-0.7.2
+# svn export -r 282 svn://svn.code.sf.net/p/ccdciel/code/trunk ccdciel-0.8.3
+# tar -cJvf ccdciel-0.8.3-282.tar.xz ccdciel-0.8.3
 Source0:        %{name}-%{version}-%{svnversion}.tar.xz
 
 # Patch to avoid stripping debuginfo from executable
@@ -89,6 +89,9 @@ fi
 
 
 %changelog
+* Fri Sep 23 2016 Mattia Verga <mattia.verga@tiscali.it> - 0.8.3-1.282svn
+- Update to 0.8.3
+
 * Sun Sep 04 2016 Mattia Verga <mattia.verga@tiscali.it> - 0.7.2-1.228svn
 - Update to 0.7.2
 
