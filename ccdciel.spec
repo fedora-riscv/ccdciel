@@ -30,8 +30,6 @@ Requires:       libpasastro%{?_isa}
 
 Recommends:     libindi
 
-# WCStools retired since F15
-Provides:       bundled(wcstools) = 3.9.0
 
 %description
 CCDciel is a free CCD capture software intended for the amateur astronomer. 
