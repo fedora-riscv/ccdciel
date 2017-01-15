@@ -21,7 +21,7 @@ ExclusiveArch:  %{fpc_arches}
 
 BuildRequires:  desktop-file-utils
 BuildRequires:  fpc
-BuildRequires:  lazarus
+BuildRequires:  lazarus >= 1.6.2
 BuildRequires:  libappstream-glib
 
 # CCDciel requires libpasastro to function properly
