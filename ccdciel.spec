@@ -2,7 +2,7 @@
 
 Name:           ccdciel
 Version:        0.8.7
-Release:        1.%{svnversion}svn%{?dist}
+Release:        2.%{svnversion}svn%{?dist}
 Summary:        CCD capture software
 
 License:        GPLv3+
@@ -90,6 +90,9 @@ fi
 
 
 %changelog
+* Fri Feb 10 2017 Fedora Release Engineering <releng@fedoraproject.org> - 0.8.7-2.325svn
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_26_Mass_Rebuild
+
 * Thu Feb 02 2017 Mattia Verga <mattia.verga@tiscali.it> - 0.8.7-1.325svn
 - Update to 0.8.7
 
