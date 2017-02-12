@@ -2,7 +2,7 @@
 
 Name:           ccdciel
 Version:        0.8.7
-Release:        2.%{svnversion}svn%{?dist}
+Release:        3.%{svnversion}svn%{?dist}
 Summary:        CCD capture software
 
 License:        GPLv3+
@@ -18,6 +18,9 @@ Source0:        %{name}-%{version}-%{svnversion}.tar.xz
 Patch0:         ccdciel_fix_stripping.patch
 
 ExclusiveArch:  %{fpc_arches}
+# fpc is available on ppc64, but lazarus has some limitations that
+# prevents this package to build
+ExcludeArch:    ppc64
 
 BuildRequires:  desktop-file-utils
 BuildRequires:  fpc
@@ -90,6 +93,9 @@ fi
 
 
 %changelog
+* Sun Feb 12 2017 Mattia Verga <mattia.verga@tiscali.it> - 0.8.7-3.325svn
+- Set ExcludeArch ppc64 due to lazarus limitations
+
 * Fri Feb 10 2017 Fedora Release Engineering <releng@fedoraproject.org> - 0.8.7-2.325svn
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_26_Mass_Rebuild
 
