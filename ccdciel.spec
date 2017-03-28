@@ -1,16 +1,16 @@
-%global svnversion 325
+%global svnversion 338
 
 Name:           ccdciel
-Version:        0.8.7
-Release:        3.%{svnversion}svn%{?dist}
+Version:        0.8.8
+Release:        1.%{svnversion}svn%{?dist}
 Summary:        CCD capture software
 
 License:        GPLv3+
 URL:            http://www.ap-i.net/ccdciel/
 # The source code is not available upstream as a package so we pulled it 
 # from upstream's vcs. Use the following commands to generate the tarball:
-# svn export -r 325 svn://svn.code.sf.net/p/ccdciel/code/trunk ccdciel-0.8.7
-# tar -cJvf ccdciel-0.8.7-325.tar.xz ccdciel-0.8.7
+# svn export -r 338 svn://svn.code.sf.net/p/ccdciel/code/trunk ccdciel-0.8.8
+# tar -cJvf ccdciel-0.8.8-338.tar.xz ccdciel-0.8.8
 Source0:        %{name}-%{version}-%{svnversion}.tar.xz
 
 # Patch to avoid stripping debuginfo from executable
@@ -93,6 +93,9 @@ fi
 
 
 %changelog
+* Tue Mar 28 2017 Mattia Verga <mattia.verga@tiscali.it> - 0.8.8-1.338svn
+- Update to 0.8.8 rev338
+
 * Sun Feb 12 2017 Mattia Verga <mattia.verga@tiscali.it> - 0.8.7-3.325svn
 - Set ExcludeArch ppc64 due to lazarus limitations
 
