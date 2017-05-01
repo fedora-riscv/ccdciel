@@ -1,7 +1,7 @@
-%global svnversion 351
+%global svnversion 370
 
 Name:           ccdciel
-Version:        0.8.11
+Version:        0.8.12
 Release:        1.%{svnversion}svn%{?dist}
 Summary:        CCD capture software
 
@@ -9,13 +9,13 @@ License:        GPLv3+
 URL:            http://www.ap-i.net/ccdciel/
 # The source code is not available upstream as a package so we pulled it 
 # from upstream's vcs. Use the following commands to generate the tarball:
-# svn export -r 351 svn://svn.code.sf.net/p/ccdciel/code/trunk ccdciel-0.8.11
-# tar -cJvf ccdciel-0.8.11-351.tar.xz ccdciel-0.8.11
+# svn export -r 370 svn://svn.code.sf.net/p/ccdciel/code/trunk ccdciel-0.8.12
+# tar -cJvf ccdciel-0.8.12-370.tar.xz ccdciel-0.8.12
 Source0:        %{name}-%{version}-%{svnversion}.tar.xz
 
 # Patch to avoid stripping debuginfo from executable
 # Since this is Fedora specific we don't ask upstream to include
-Patch0:         ccdciel_fix_stripping.patch
+Patch0:         ccdciel-0.8.12_fix_stripping.patch
 
 ExclusiveArch:  %{fpc_arches}
 # fpc is available on ppc64, but lazarus has some limitations that
@@ -93,6 +93,9 @@ fi
 
 
 %changelog
+* Mon May 01 2017 Mattia Verga <mattia.verga@tiscali.it> - 0.8.12-1.370svn
+- Update to 0.8.12 rev370
+
 * Fri Apr 14 2017 Mattia Verga <mattia.verga@tiscali.it> - 0.8.11-1.351svn
 - Update to 0.8.11 rev351
 
