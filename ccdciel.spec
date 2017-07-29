@@ -2,7 +2,7 @@
 
 Name:           ccdciel
 Version:        0.8.16
-Release:        2.%{svnversion}svn%{?dist}
+Release:        3.%{svnversion}svn%{?dist}
 Summary:        CCD capture software
 
 License:        GPLv3+
@@ -56,7 +56,7 @@ chmod -x ./component/synapse/source/lib/*.pas
 
 # Ccdciel doesn't like parallel building so we don't use macro.
 # We pass options to fpc compiler for generate debug info.
-make fpcopts="-O1 -g -gl -OoREGVAR -Ch2000000 -CX -XX"
+make fpcopts="-O1 -gw3 -fPIC"
 
 %install
 make install PREFIX=%{buildroot}%{_prefix}
@@ -93,6 +93,9 @@ fi
 
 
 %changelog
+* Sat Jul 29 2017 Mattia Verga <mattia.verga@email.it> - 0.8.16-3.400svn
+- Change FPC build options to fix debug package build
+
 * Wed Jul 26 2017 Fedora Release Engineering <releng@fedoraproject.org> - 0.8.16-2.400svn
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Mass_Rebuild
 
