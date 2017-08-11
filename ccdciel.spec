@@ -1,16 +1,16 @@
-%global svnversion 400
+%global svnversion 417
 
 Name:           ccdciel
-Version:        0.8.16
-Release:        4.%{svnversion}svn%{?dist}
+Version:        0.8.18
+Release:        1.%{svnversion}svn%{?dist}
 Summary:        CCD capture software
 
 License:        GPLv3+
 URL:            http://www.ap-i.net/ccdciel/
 # The source code is not available upstream as a package so we pulled it 
 # from upstream's vcs. Use the following commands to generate the tarball:
-# svn export -r 400 svn://svn.code.sf.net/p/ccdciel/code/trunk ccdciel-0.8.16
-# tar -cJvf ccdciel-0.8.16-400.tar.xz ccdciel-0.8.16
+# svn export -r 417 svn://svn.code.sf.net/p/ccdciel/code/trunk ccdciel-0.8.18
+# tar -cJvf ccdciel-0.8.18-417.tar.xz ccdciel-0.8.18
 Source0:        %{name}-%{version}-%{svnversion}.tar.xz
 
 # Patch to avoid stripping debuginfo from executable
@@ -93,6 +93,9 @@ fi
 
 
 %changelog
+* Fri Aug 11 2017 Mattia Verga <mattia.verga@email.it> - 0.8.18-1.417svn
+- Update to 0.8.18 rev417
+
 * Wed Aug 02 2017 Fedora Release Engineering <releng@fedoraproject.org> - 0.8.16-4.400svn
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Binutils_Mass_Rebuild
 
