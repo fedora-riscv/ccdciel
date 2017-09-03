@@ -1,9 +1,9 @@
 diff -U 3 -dHrN -- a/install.sh b/install.sh
---- a/install.sh	2017-04-25 18:33:58.897474000 +0200
-+++ b/install.sh	2017-05-01 10:22:37.969006872 +0200
-@@ -29,7 +29,7 @@
- install -m 755 -d $destdir/share/ccdciel/data
+--- a/install.sh	2017-08-27 17:14:49.754497000 +0200
++++ b/install.sh	2017-09-03 20:09:17.115005556 +0200
+@@ -30,7 +30,7 @@
  install -m 755 -d $destdir/share/ccdciel/data/stars
+ install -m 755 -d $destdir/share/ccdciel/doc
  
 -install -v -m 755 -s src/ccdciel  $destdir/bin/ccdciel
 +install -v -m 755 src/ccdciel  $destdir/bin/ccdciel
