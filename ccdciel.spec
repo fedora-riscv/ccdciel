@@ -1,7 +1,7 @@
-%global svnversion 428
+%global svnversion 475
 
 Name:           ccdciel
-Version:        0.9.0
+Version:        0.9.2
 Release:        1.%{svnversion}svn%{?dist}
 Summary:        CCD capture software
 
@@ -9,8 +9,8 @@ License:        GPLv3+
 URL:            http://www.ap-i.net/ccdciel/
 # The source code is not available upstream as a package so we pulled it 
 # from upstream's vcs. Use the following commands to generate the tarball:
-# svn export -r 428 svn://svn.code.sf.net/p/ccdciel/code/trunk ccdciel-0.9.0
-# tar -cJvf ccdciel-0.9.0-428.tar.xz ccdciel-0.9.0
+# svn export -r 475 svn://svn.code.sf.net/p/ccdciel/code/trunk ccdciel-0.9.2
+# tar -cJvf ccdciel-0.9.2-475.tar.xz ccdciel-0.9.2
 Source0:        %{name}-%{version}-%{svnversion}.tar.xz
 
 # Patch to avoid stripping debuginfo from executable
@@ -31,6 +31,7 @@ BuildRequires:  libappstream-glib
 # but rpm doesn't find this autorequire
 Requires:       libpasastro%{?_isa}
 
+Recommends:     astrometry, astrometry-tycho2
 Recommends:     libindi
 
 
@@ -93,6 +94,10 @@ fi
 
 
 %changelog
+* Thu Sep 14 2017 Mattia Verga <mattia.verga@email.it> - 0.9.2-1.475svn
+- Update to 0.9.2 rev475
+- Add astrometry and astrometry-tycho2 as weak dependencies
+
 * Sun Sep 03 2017 Mattia Verga <mattia.verga@email.it> - 0.9.0-1.428svn
 - Update to 0.9.0 rev428
 
