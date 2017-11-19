@@ -1,7 +1,7 @@
-%global svnversion 605
+%global svnversion 656
 
 Name:           ccdciel
-Version:        0.9.11
+Version:        0.9.14
 Release:        1.%{svnversion}svn%{?dist}
 Summary:        CCD capture software
 
@@ -9,8 +9,8 @@ License:        GPLv3+
 URL:            http://www.ap-i.net/ccdciel/
 # The source code is not available upstream as a package so we pulled it 
 # from upstream's vcs. Use the following commands to generate the tarball:
-# svn export -r 605 svn://svn.code.sf.net/p/ccdciel/code/trunk ccdciel-0.9.11
-# tar -cJvf ccdciel-0.9.11-605.tar.xz ccdciel-0.9.11
+# svn export -r 656 svn://svn.code.sf.net/p/ccdciel/code/trunk ccdciel-0.9.14
+# tar -cJvf ccdciel-0.9.14-656.tar.xz ccdciel-0.9.14
 Source0:        %{name}-%{version}-%{svnversion}.tar.xz
 
 # Patch to avoid stripping debuginfo from executable
@@ -68,7 +68,7 @@ make install PREFIX=%{buildroot}%{_prefix}
 desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 
 # Appdata file check
-appstream-util validate-relax --nonet %{buildroot}%{_datadir}/appdata/*.appdata.xml
+appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/*.appdata.xml
 
 %post
 /bin/touch --no-create %{_datadir}/icons/hicolor &>/dev/null || :
@@ -88,12 +88,16 @@ fi
 %{_bindir}/%{name}
 %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
-%{_datadir}/appdata/%{name}.appdata.xml
+%{_datadir}/metainfo/%{name}.appdata.xml
 %{_datadir}/icons/*/*/*/%{name}.png
 %{_datadir}/pixmaps/%{name}.png
 
 
 %changelog
+* Sun Nov 19 2017 Mattia Verga <mattia.verga@email.it> - 0.9.14-1.656svn
+- Update to 0.9.14 rev656
+- Appdata files moved in metainfo directory
+
 * Wed Nov 01 2017 Mattia Verga <mattia.verga@email.it> - 0.9.11-1.605svn
 - Update to 0.9.11 rev605
 
