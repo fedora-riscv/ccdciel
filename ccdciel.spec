@@ -1,7 +1,7 @@
-%global svnversion 711
+%global svnversion 748
 
 Name:           ccdciel
-Version:        0.9.18
+Version:        0.9.22
 Release:        1.%{svnversion}svn%{?dist}
 Summary:        CCD capture software
 
@@ -9,8 +9,8 @@ License:        GPLv3+
 URL:            http://www.ap-i.net/ccdciel/
 # The source code is not available upstream as a package so we pulled it 
 # from upstream's vcs. Use the following commands to generate the tarball:
-# svn export -r 711 svn://svn.code.sf.net/p/ccdciel/code/trunk ccdciel-0.9.18
-# tar -cJvf ccdciel-0.9.18-711.tar.xz ccdciel-0.9.18
+# svn export -r 748 svn://svn.code.sf.net/p/ccdciel/code/trunk ccdciel-0.9.22
+# tar -cJvf ccdciel-0.9.22-748.tar.xz ccdciel-0.9.22
 Source0:        %{name}-%{version}-%{svnversion}.tar.xz
 
 # Patch to avoid stripping debuginfo from executable
@@ -46,9 +46,6 @@ Indistarter can be used to control INDI server drivers
 
 %prep
 %autosetup -p1
-
-#Remove spurious executable bit
-chmod -x ./component/synapse/source/lib/*.pas
 
 
 %build
@@ -94,6 +91,9 @@ fi
 
 
 %changelog
+* Fri Dec 15 2017 Mattia Verga <mattia.verga@email.it> - 0.9.22-1.748svn
+- Update to 0.9.22 rev748
+
 * Sun Dec 03 2017 Mattia Verga <mattia.verga@email.it> - 0.9.18-1.711svn
 - Update to 0.9.18 rev711
 
