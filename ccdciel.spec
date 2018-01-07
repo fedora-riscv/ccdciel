@@ -2,7 +2,7 @@
 
 Name:           ccdciel
 Version:        0.9.22
-Release:        1.%{svnversion}svn%{?dist}
+Release:        2.%{svnversion}svn%{?dist}
 Summary:        CCD capture software
 
 License:        GPLv3+
@@ -67,18 +67,6 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 # Appdata file check
 appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/*.appdata.xml
 
-%post
-/bin/touch --no-create %{_datadir}/icons/hicolor &>/dev/null || :
-
-%postun
-if [ $1 -eq 0 ] ; then
-    /bin/touch --no-create %{_datadir}/icons/hicolor &>/dev/null
-    /usr/bin/gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
-fi
-
-%posttrans
-/usr/bin/gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
-
 %files
 %license LICENSE gpl-3.0.txt
 %doc %{_datadir}/doc/%{name}/
@@ -91,6 +79,9 @@ fi
 
 
 %changelog
+* Sun Jan 07 2018 Igor Gnatenko <ignatenkobrain@fedoraproject.org> - 0.9.22-2.748svn
+- Remove obsolete scriptlets
+
 * Fri Dec 15 2017 Mattia Verga <mattia.verga@email.it> - 0.9.22-1.748svn
 - Update to 0.9.22 rev748
 
