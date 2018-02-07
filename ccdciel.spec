@@ -2,7 +2,7 @@
 
 Name:           ccdciel
 Version:        0.9.22
-Release:        2.%{svnversion}svn%{?dist}
+Release:        3.%{svnversion}svn%{?dist}
 Summary:        CCD capture software
 
 License:        GPLv3+
@@ -79,6 +79,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/*.appdata
 
 
 %changelog
+* Wed Feb 07 2018 Fedora Release Engineering <releng@fedoraproject.org> - 0.9.22-3.748svn
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_28_Mass_Rebuild
+
 * Sun Jan 07 2018 Igor Gnatenko <ignatenkobrain@fedoraproject.org> - 0.9.22-2.748svn
 - Remove obsolete scriptlets
 
