@@ -1,21 +1,18 @@
-%global svnversion 816
-
 Name:           ccdciel
-Version:        0.9.26
-Release:        1.%{svnversion}svn%{?dist}
+Version:        0.9.29
+Release:        1%{?dist}
 Summary:        CCD capture software
 
 License:        GPLv3+
 URL:            http://www.ap-i.net/ccdciel/
-# The source code is not available upstream as a package so we pulled it 
-# from upstream's vcs. Use the following commands to generate the tarball:
-# svn export -r 816 svn://svn.code.sf.net/p/ccdciel/code/trunk ccdciel-0.9.26
-# tar -cJvf ccdciel-0.9.26-816.tar.xz ccdciel-0.9.26
-Source0:        %{name}-%{version}-%{svnversion}.tar.xz
+# Upstream uses a trailing 'v' in filename.
+# The full Source URL is https://github.com/pchev/%%{name}/archive/v%%{version}.tar.gz
+Source0:        %{name}-%{version}.tar.gz
+
 
 # Patch to avoid stripping debuginfo from executable
 # Since this is Fedora specific we don't ask upstream to include
-Patch0:         ccdciel-0.9.0_fix_stripping.patch
+Patch100:       ccdciel-0.9.29_fix_debuginfo.patch
 
 ExclusiveArch:  %{fpc_arches}
 # fpc is available on ppc64, but lazarus has some limitations that
@@ -79,6 +76,10 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/*.appdata
 
 
 %changelog
+* Sun Mar 11 2018 Mattia Verga <mattia.verga@email.it> - 0.9.29-1
+- Update to 0.9.29
+- Sources moved to github
+
 * Sun Feb 25 2018 Mattia Verga <mattia.verga@email.it> - 0.9.26-1.816svn
 - Update to 0.9.26 rev816
 
