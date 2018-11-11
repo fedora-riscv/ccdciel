@@ -1,5 +1,5 @@
 Name:           ccdciel
-Version:        0.9.41
+Version:        0.9.47
 Release:        1%{?dist}
 Summary:        CCD capture software
 
@@ -76,6 +76,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/*.appdata
 
 
 %changelog
+* Sun Nov 11 2018 Mattia Verga <mattia.verga@protonmail.com> - 0.9.47-1
+- Update to 0.9.47
+
 * Sun Jul 15 2018 Mattia Verga <mattia.verga@yandex.com> - 0.9.41-1
 - Update to 0.9.41
 
