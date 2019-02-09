@@ -1,13 +1,13 @@
+%global gittag v0.9.52
+
 Name:           ccdciel
-Version:        0.9.47
-Release:        2%{?dist}
+Version:        0.9.52
+Release:        1%{?dist}
 Summary:        CCD capture software
 
 License:        GPLv3+
 URL:            http://www.ap-i.net/ccdciel/
-# Upstream uses a trailing 'v' in filename.
-# The full Source URL is https://github.com/pchev/%%{name}/archive/v%%{version}.tar.gz
-Source0:        %{name}-%{version}.tar.gz
+Source0:        https://github.com/pchev/%{name}/archive/%{gittag}/%{name}-%{version}.tar.gz
 
 
 # Patch to avoid stripping debuginfo from executable
@@ -76,6 +76,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/*.appdata
 
 
 %changelog
+* Sat Feb 09 2019 Mattia Verga <mattia.verga@protonmail.com> - 0.9.52-1
+- Update to 0.9.52
+
 * Thu Jan 31 2019 Fedora Release Engineering <releng@fedoraproject.org> - 0.9.47-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_30_Mass_Rebuild
 
