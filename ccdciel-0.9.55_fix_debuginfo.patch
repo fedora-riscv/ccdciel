@@ -1,8 +1,8 @@
 diff -U 3 -dHrN -- a/install.sh b/install.sh
---- a/install.sh	2018-03-08 19:17:54.000000000 +0100
-+++ b/install.sh	2018-03-11 09:40:20.340203853 +0100
-@@ -31,7 +31,7 @@
- install -m 755 -d $destdir/share/ccdciel/data/language
+--- a/install.sh	2019-04-16 14:00:05.000000000 +0200
++++ b/install.sh	2019-04-20 11:32:02.341360277 +0200
+@@ -34,7 +34,7 @@
+ install -m 755 -d $destdir/share/ccdciel/data/resources
  install -m 755 -d $destdir/share/ccdciel/doc
  
 -install -v -m 755 -s src/ccdciel  $destdir/bin/ccdciel
