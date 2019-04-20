@@ -1,7 +1,7 @@
-%global gittag v0.9.52
+%global gittag v0.9.55
 
 Name:           ccdciel
-Version:        0.9.52
+Version:        0.9.55
 Release:        1%{?dist}
 Summary:        CCD capture software
 
@@ -15,9 +15,6 @@ Source0:        https://github.com/pchev/%{name}/archive/%{gittag}/%{name}-%{ver
 Patch100:       ccdciel-0.9.29_fix_debuginfo.patch
 
 ExclusiveArch:  %{fpc_arches}
-# fpc is available on ppc64, but lazarus has some limitations that
-# prevents this package to build
-ExcludeArch:    ppc64
 
 BuildRequires:  desktop-file-utils
 BuildRequires:  fpc
@@ -76,6 +73,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/*.appdata
 
 
 %changelog
+* Sat Apr 20 2019 Mattia Verga <mattia.verga@protonmail.com> - 0.9.55-1
+- Update to 0.9.55
+
 * Sat Feb 09 2019 Mattia Verga <mattia.verga@protonmail.com> - 0.9.52-1
 - Update to 0.9.52
 
