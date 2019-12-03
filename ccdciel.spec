@@ -1,7 +1,7 @@
-%global gittag v0.9.60
+%global gittag v0.9.65
 
 Name:           ccdciel
-Version:        0.9.60
+Version:        0.9.65
 Release:        1%{?dist}
 Summary:        CCD capture software
 
@@ -41,6 +41,8 @@ Indistarter can be used to control INDI server drivers
 %prep
 %autosetup -p1
 
+# Make sure we don't use bundled libraries
+rm -rf library/*
 
 %build
 # Configure script requires non standard parameters
@@ -73,6 +75,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/*.appdata
 
 
 %changelog
+* Tue Dec 03 2019 Mattia Verga <mattia.verga@protonmail.com> - 0.9.65-1
+- Update to 0.9.65
+
 * Thu Aug 29 2019 Mattia Verga <mattia.verga@protonmail.com> - 0.9.60-1
 - Update to 0.9.60
 
