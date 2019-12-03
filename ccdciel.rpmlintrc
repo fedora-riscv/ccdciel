@@ -1,0 +1,2 @@
+# libpasastro is not automatically pulled as dependency
+addFilter(r'explicit-lib-dependency libpasastro')
