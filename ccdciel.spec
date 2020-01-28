@@ -2,7 +2,7 @@
 
 Name:           ccdciel
 Version:        0.9.65
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        CCD capture software
 
 License:        GPLv3+
@@ -75,6 +75,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/*.appdata
 
 
 %changelog
+* Tue Jan 28 2020 Fedora Release Engineering <releng@fedoraproject.org> - 0.9.65-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
+
 * Tue Dec 03 2019 Mattia Verga <mattia.verga@protonmail.com> - 0.9.65-1
 - Update to 0.9.65
 
