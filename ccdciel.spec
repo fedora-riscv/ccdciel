@@ -1,8 +1,8 @@
-%global gittag v0.9.65
+%global gittag v0.9.68
 
 Name:           ccdciel
-Version:        0.9.65
-Release:        2%{?dist}
+Version:        0.9.68
+Release:        1%{?dist}
 Summary:        CCD capture software
 
 License:        GPLv3+
@@ -75,6 +75,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/*.appdata
 
 
 %changelog
+* Sat Feb 01 2020 Mattia Verga <mattia.verga@protonmail.com> - 0.9.68-1
+- Update to 0.9.68
+
 * Tue Jan 28 2020 Fedora Release Engineering <releng@fedoraproject.org> - 0.9.65-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
 
