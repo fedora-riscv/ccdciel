@@ -2,7 +2,7 @@
 
 Name:           ccdciel
 Version:        0.9.68
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        CCD capture software
 
 License:        GPLv3+
@@ -15,6 +15,7 @@ Source0:        https://github.com/pchev/%{name}/archive/%{gittag}/%{name}-%{ver
 Patch100:       ccdciel-0.9.55_fix_debuginfo.patch
 
 ExclusiveArch:  %{fpc_arches}
+ExcludeArch:    ppc64le
 
 BuildRequires:  desktop-file-utils
 BuildRequires:  fpc
@@ -75,6 +76,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/*.appdata
 
 
 %changelog
+* Sat Feb 08 2020 Mattia Verga <mattia.verga@protonmail.com> - 0.9.68-2
+- ExcludeArch ppc64le due to compilation errors
+
 * Sat Feb 01 2020 Mattia Verga <mattia.verga@protonmail.com> - 0.9.68-1
 - Update to 0.9.68
 
