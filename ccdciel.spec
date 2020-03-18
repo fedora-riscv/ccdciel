@@ -2,7 +2,7 @@
 
 Name:           ccdciel
 Version:        0.9.68
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        CCD capture software
 
 License:        GPLv3+
@@ -25,6 +25,7 @@ BuildRequires:  libappstream-glib
 # CCDciel requires libpasastro to function properly
 # but rpm doesn't find this autorequire
 Requires:       libpasastro%{?_isa}
+Requires:       libpasraw%{?_isa}
 
 Recommends:     astrometry, astrometry-tycho2
 Recommends:     libindi
@@ -76,6 +77,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/*.appdata
 
 
 %changelog
+* Wed Mar 18 2020 Mattia Verga <mattia.verga@protonmail.com> - 0.9.68-3
+- Add libpasraw to Requires
+
 * Sat Feb 08 2020 Mattia Verga <mattia.verga@protonmail.com> - 0.9.68-2
 - ExcludeArch ppc64le due to compilation errors
 
