@@ -2,7 +2,7 @@
 
 Name:           ccdciel
 Version:        0.9.68
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        CCD capture software
 
 License:        GPLv3+
@@ -77,6 +77,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/*.appdata
 
 
 %changelog
+* Mon Jul 27 2020 Fedora Release Engineering <releng@fedoraproject.org> - 0.9.68-4
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_33_Mass_Rebuild
+
 * Wed Mar 18 2020 Mattia Verga <mattia.verga@protonmail.com> - 0.9.68-3
 - Add libpasraw to Requires
 
