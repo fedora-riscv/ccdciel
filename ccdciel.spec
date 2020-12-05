@@ -1,8 +1,8 @@
-%global gittag v0.9.68
+%global gittag v0.9.73
 
 Name:           ccdciel
-Version:        0.9.68
-Release:        4%{?dist}
+Version:        0.9.73
+Release:        1%{?dist}
 Summary:        CCD capture software
 
 License:        GPLv3+
@@ -21,6 +21,7 @@ BuildRequires:  desktop-file-utils
 BuildRequires:  fpc
 BuildRequires:  lazarus >= 1.6.2
 BuildRequires:  libappstream-glib
+BuildRequires:  make
 
 # CCDciel requires libpasastro to function properly
 # but rpm doesn't find this autorequire
@@ -40,11 +41,21 @@ the CCD camera, the focuser, the filter wheel and the telescope mount.
 It tightly integrates with Skychart to provide telescope control while
 Indistarter can be used to control INDI server drivers
 
+
+%package        doc
+Summary:        Documentation files for %{name}
+BuildArch:      noarch
+
+%description    doc
+The %{name}-doc package contains documentation for %{name}.
+
+
 %prep
 %autosetup -p1
 
 # Make sure we don't use bundled libraries
 rm -rf library/*
+
 
 %build
 # Configure script requires non standard parameters
@@ -54,8 +65,12 @@ rm -rf library/*
 # We pass options to fpc compiler for generate debug info.
 make fpcopts="-O1 -gw3 -fPIC"
 
+
 %install
 make install PREFIX=%{buildroot}%{_prefix}
+
+# Copy relevant documentation
+cp -p doc/doc_%{name}_en.pdf %{buildroot}%{_pkgdocdir}
 
 
 %check
@@ -65,9 +80,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 # Appdata file check
 appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/*.appdata.xml
 
+
 %files
 %license LICENSE gpl-3.0.txt
-%doc %{_datadir}/doc/%{name}/
 %{_bindir}/%{name}
 %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
@@ -76,7 +91,16 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/*.appdata
 %{_datadir}/pixmaps/%{name}.png
 
 
+%files      doc
+%{_pkgdocdir}
+
+
 %changelog
+* Sat Dec 04 2020 Mattia Verga <mattia.verga@protonmail.com> - 0.9.73-1
+- Update to 0.9.73
+- Add make to BuildRequires
+- Split documentation package
+
 * Mon Jul 27 2020 Fedora Release Engineering <releng@fedoraproject.org> - 0.9.68-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_33_Mass_Rebuild
 
