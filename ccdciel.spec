@@ -12,7 +12,7 @@ Source0:        https://github.com/pchev/%{name}/archive/%{gittag}/%{name}-%{ver
 
 # Patch to avoid stripping debuginfo from executable
 # Since this is Fedora specific we don't ask upstream to include
-Patch100:       ccdciel-0.9.55_fix_debuginfo.patch
+Patch100:       ccdciel-0.9.75_fix_debuginfo.patch
 
 ExclusiveArch:  %{fpc_arches}
 ExcludeArch:    ppc64le
