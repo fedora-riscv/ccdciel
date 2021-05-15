@@ -1,12 +1,12 @@
-diff -U 3 -dHrN -- a/install.sh b/install.sh
---- a/install.sh	2019-04-16 14:00:05.000000000 +0200
-+++ b/install.sh	2019-04-20 11:32:02.341360277 +0200
-@@ -34,7 +34,7 @@
+diff -udHrN -- a/install.sh b/install.sh
+--- a/install.sh	2021-05-04 18:37:54.000000000 +0200
++++ b/install.sh	2021-05-15 11:41:32.389046207 +0200
+@@ -36,7 +36,7 @@
  install -m 755 -d $destdir/share/ccdciel/data/resources
  install -m 755 -d $destdir/share/ccdciel/doc
  
 -install -v -m 755 -s src/ccdciel  $destdir/bin/ccdciel
 +install -v -m 755 src/ccdciel  $destdir/bin/ccdciel
+ install -v -m 644 scripts/ccdciel.py  $destdir/share/ccdciel/scripts/ccdciel.py
  install -v -m 644 scripts/scope_park.script  $destdir/share/ccdciel/scripts/scope_park.script
  install -v -m 644 scripts/scope_unpark.script  $destdir/share/ccdciel/scripts/scope_unpark.script
- install -v -m 644 scripts/T_ccd_temp_down.script  $destdir/share/ccdciel/scripts/T_ccd_temp_down.script

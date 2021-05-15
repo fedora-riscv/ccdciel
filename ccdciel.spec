@@ -1,8 +1,8 @@
-%global gittag v0.9.74
+%global gittag v0.9.75.1
 
 Name:           ccdciel
-Version:        0.9.74
-Release:        2%{?dist}
+Version:        0.9.75.1
+Release:        1%{?dist}
 Summary:        CCD capture software
 
 License:        GPLv3+
@@ -96,6 +96,10 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/*.appdata
 
 
 %changelog
+* Sat May 15 2021 Mattia Verga <mattia.verga@protonmail.com> - 0.9.75.1-1
+- Update to 0.9.75.1
+- Fixes rhbz#1956061
+
 * Sun May 02 2021 Mattia Verga <mattia.verga@protonmail.com> - 0.9.74-2
 - Fix date in changelog
 
