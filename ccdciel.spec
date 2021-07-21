@@ -2,7 +2,7 @@
 
 Name:           ccdciel
 Version:        0.9.75.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        CCD capture software
 
 License:        GPLv3+
@@ -96,6 +96,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/*.appdata
 
 
 %changelog
+* Wed Jul 21 2021 Fedora Release Engineering <releng@fedoraproject.org> - 0.9.75.1-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_35_Mass_Rebuild
+
 * Sat May 15 2021 Mattia Verga <mattia.verga@protonmail.com> - 0.9.75.1-1
 - Update to 0.9.75.1
 - Fixes rhbz#1956061
