@@ -1,8 +1,8 @@
-%global gittag v0.9.75.1
+%global gittag v0.9.77
 
 Name:           ccdciel
-Version:        0.9.75.1
-Release:        3%{?dist}
+Version:        0.9.77
+Release:        1%{?dist}
 Summary:        CCD capture software
 
 License:        GPLv3+
@@ -12,7 +12,7 @@ Source0:        https://github.com/pchev/%{name}/archive/%{gittag}/%{name}-%{ver
 
 # Patch to avoid stripping debuginfo from executable
 # Since this is Fedora specific we don't ask upstream to include
-Patch100:       ccdciel-0.9.75_fix_debuginfo.patch
+Patch100:       ccdciel-0.9.77_fix_debuginfo.patch
 
 ExclusiveArch:  %{fpc_arches}
 ExcludeArch:    ppc64le
@@ -75,19 +75,20 @@ cp -p doc/doc_%{name}_en.pdf %{buildroot}%{_pkgdocdir}
 
 %check
 # Menu entry
-desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
+desktop-file-validate %{buildroot}%{_datadir}/applications/net.ap_i.%{name}.desktop
 
 # Appdata file check
-appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/*.appdata.xml
+appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/net.ap_i.%{name}.metainfo.xml
 
 
 %files
 %license LICENSE gpl-3.0.txt
 %{_bindir}/%{name}
 %{_datadir}/%{name}
-%{_datadir}/applications/%{name}.desktop
-%{_datadir}/metainfo/%{name}.appdata.xml
+%{_datadir}/applications/net.ap_i.%{name}.desktop
+%{_datadir}/metainfo/net.ap_i.%{name}.metainfo.xml
 %{_datadir}/icons/*/*/*/%{name}.png
+%{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
 %{_datadir}/pixmaps/%{name}.png
 
 
@@ -96,6 +97,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/*.appdata
 
 
 %changelog
+* Sat Feb 05 2022 Mattia Verga <mattia.verga@protonmail.com> - 0.9.77-1
+- Update to 0.9.77 (fedora#2003353)
+
 * Wed Jan 19 2022 Fedora Release Engineering <releng@fedoraproject.org> - 0.9.75.1-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_36_Mass_Rebuild
 
