@@ -1,8 +1,8 @@
-%global gittag v0.9.77
+%global gittag v0.9.78
 
 Name:           ccdciel
-Version:        0.9.77
-Release:        1%{?dist}
+Version:        0.9.78
+Release:        %autorelease
 Summary:        CCD capture software
 
 License:        GPLv3+
