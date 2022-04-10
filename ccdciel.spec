@@ -1,13 +1,17 @@
-%global gittag v0.9.78
+#%%global gittag v0.9.78
+%global commit b0f6c7ba092f2526481ce8340a349685e51db9a3
+%global shortcommit %(c=%{commit}; echo ${c:0:7})
+%global date 20220410
 
 Name:           ccdciel
-Version:        0.9.78
+Version:        0.9.79^%{date}%{shortcommit}
 Release:        %autorelease
 Summary:        CCD capture software
 
 License:        GPLv3+
 URL:            http://www.ap-i.net/ccdciel/
-Source0:        https://github.com/pchev/%{name}/archive/%{gittag}/%{name}-%{version}.tar.gz
+#Source0:        https://github.com/pchev/%%{name}/archive/%%{gittag}/%%{name}-%%{version}.tar.gz
+Source0:        https://github.com/pchev/%{name}/archive/%{commit}/%{name}-%{commit}.tar.gz
 
 
 # Patch to avoid stripping debuginfo from executable
@@ -51,7 +55,7 @@ The %{name}-doc package contains documentation for %{name}.
 
 
 %prep
-%autosetup -p1
+%autosetup -n %{name}-%{commit} -p1
 
 # Make sure we don't use bundled libraries
 rm -rf library/*
