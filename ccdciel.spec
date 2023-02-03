@@ -12,7 +12,7 @@ Version:        0.9.79^%{date}%{shortcommit}
 Release:        %autorelease
 Summary:        CCD capture software
 
-License:        GPLv3+
+License:        GPL-3.0-or-later
 URL:            http://www.ap-i.net/ccdciel/
 %if "%{?gittag}"
 Source0:        https://github.com/pchev/%{name}/archive/%{gittag}/%{name}-%{version}.tar.gz
