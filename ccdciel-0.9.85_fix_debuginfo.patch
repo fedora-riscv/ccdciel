@@ -1,6 +1,6 @@
-diff -udHrN -- a/install.sh b/install.sh
---- a/install.sh	2022-01-31 14:07:22.000000000 +0100
-+++ b/install.sh	2022-02-05 11:16:28.400333820 +0100
+diff -U 3 -dHrN a/install.sh b/install.sh
+--- a/install.sh	2023-08-02 20:24:06.000000000 +0200
++++ b/install.sh	2023-08-02 20:35:00.274189167 +0200
 @@ -44,7 +44,7 @@
  install -m 755 -d $destdir/share/ccdciel/data/resources
  install -m 755 -d $destdir/share/ccdciel/doc
@@ -9,4 +9,4 @@ diff -udHrN -- a/install.sh b/install.sh
 +install -v -m 755 src/ccdciel  $destdir/bin/ccdciel
  install -v -m 755 scripts/astrometry.sh  $destdir/share/ccdciel/scripts/astrometry.sh
  install -v -m 755 scripts/astrometry-online.sh  $destdir/share/ccdciel/scripts/astrometry-online.sh
- install -v -m 755 scripts/astrometry-macos.sh  $destdir/share/ccdciel/scripts/astrometry-macos.sh
+ install -v -m 755 scripts/astrometry-online.bat  $destdir/share/ccdciel/scripts/astrometry-online.bat
