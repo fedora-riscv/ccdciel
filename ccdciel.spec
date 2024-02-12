@@ -25,8 +25,8 @@ Source0:        https://github.com/pchev/%{name}/archive/%{commit}/%{name}-%{com
 # Since this is Fedora specific we don't ask upstream to include
 Patch100:       ccdciel-0.9.85_fix_debuginfo.patch
 
-ExclusiveArch:  %{fpc_arches}
-ExcludeArch:    %{ix86} riscv64
+ExclusiveArch:  %{fpc_arches} riscv64
+ExcludeArch:    %{ix86}
 
 BuildRequires:  desktop-file-utils
 BuildRequires:  libappstream-glib
