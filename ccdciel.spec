@@ -9,7 +9,7 @@ Version:        0.9.86
 %else
 Version:        0.9.79^%{date}%{shortcommit}
 %endif
-Release:        %autorelease
+Release:        %autorelease -e rv64
 Summary:        CCD capture software
 
 License:        GPL-3.0-or-later
@@ -26,7 +26,7 @@ Source0:        https://github.com/pchev/%{name}/archive/%{commit}/%{name}-%{com
 Patch100:       ccdciel-0.9.85_fix_debuginfo.patch
 
 ExclusiveArch:  %{fpc_arches}
-ExcludeArch:    %{ix86}
+ExcludeArch:    %{ix86} riscv64
 
 BuildRequires:  desktop-file-utils
 BuildRequires:  libappstream-glib
